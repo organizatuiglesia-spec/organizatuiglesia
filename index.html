@@ -1162,7 +1162,7 @@
             Escribir por WhatsApp
           </a>
           <div class="contact-separator">o</div>
-          <a href="https://mail.google.com/mail/?view=cm&to=organizatuiglesia@gmail.com&su=Quiero%20saber%20m%C3%A1s%20sobre%20Organiza%20Tu%20Iglesia" target="_blank" class="btn-mail">
+          <a id="btn-correo" href="#" class="btn-mail">
             ✉️ Enviar correo electrónico
           </a>
           <div class="contact-separator">o</div>
@@ -1179,7 +1179,7 @@
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Organiza Tu Iglesia · Implementación profesional de Software de Gestión de Iglesias en Colombia</p>
-  <p style="margin-top:6px;"><a href="mailto:organizatuiglesia@gmail.com">organizatuiglesia@gmail.com</a> · Desarrollado con ❤️ para el cuerpo de Cristo</p>
+  <p style="margin-top:6px;"><a id="btn-correo" href="#" class="btn-mail">organizatuiglesia@gmail.com</a> · Desarrollado con ❤️ para el cuerpo de Cristo</p>
 </footer>
 
 <script>
@@ -1211,6 +1211,19 @@
     el.style.transition = `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s`;
     observer.observe(el);
   });
+
+  // Detección de dispositivo para botón de correo
+  const btnCorreo = document.getElementById('btn-correo');
+  if (btnCorreo) {
+    const esMóvil = /Android|iPhone|iPod/i.test(navigator.userAgent);
+    if (esMóvil) {
+      btnCorreo.href = 'mailto:organizatuiglesia@gmail.com';
+      btnCorreo.removeAttribute('target');
+    } else {
+      btnCorreo.href = 'https://mail.google.com/mail/?view=cm&to=organizatuiglesia@gmail.com&su=Quiero%20saber%20m%C3%A1s%20sobre%20Organiza%20Tu%20Iglesia';
+      btnCorreo.setAttribute('target', '_blank');
+    }
+  }
 </script>
 <!-- MODAL CALENDLY LIQUID GLASS -->
 <div id="calendly-modal" style="
