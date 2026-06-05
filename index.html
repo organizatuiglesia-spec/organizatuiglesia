@@ -830,6 +830,40 @@
     .section { padding: 3.5rem 1.25rem; }
   }
 
+  @media (max-width: 540px) {
+    .privacidad-pilares {
+      grid-template-columns: 1fr !important;
+      gap: 8px !important;
+    }
+    .privacidad-pilares > div {
+      display: flex !important;
+      align-items: center !important;
+      text-align: left !important;
+      gap: 14px;
+      padding: 14px 16px !important;
+    }
+    .privacidad-pilares > div > div:first-child {
+      font-size: 26px !important;
+      margin-bottom: 0 !important;
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+    }
+    .privacidad-pilares > div > div:nth-child(2) {
+      margin-bottom: 2px !important;
+      font-size: 0.88rem !important;
+    }
+    .privacidad-pilares > div > div:nth-child(3) {
+      font-size: 0.74rem !important;
+      line-height: 1.45 !important;
+    }
+  }
+
   /* ─── WHATSAPP FLOTANTE ─── */
   .wa-float {
     position: fixed;
@@ -1446,36 +1480,39 @@
     <!-- HEADER -->
     <div style="
       position: relative; z-index: 1;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 22px 24px 18px;
+      padding: 20px 20px 16px;
       border-bottom: 1px solid rgba(255,255,255,0.12);
       flex-shrink: 0;
     ">
-      <div style="display:flex;align-items:center;gap:12px;">
-        <div style="
-          width: 42px; height: 42px; border-radius: 14px; flex-shrink:0;
-          background: linear-gradient(135deg, rgba(45,109,251,0.3), rgba(45,109,251,0.12));
-          border: 1px solid rgba(45,109,251,0.35);
-          display:flex; align-items:center; justify-content:center; font-size:20px;
-          box-shadow: 0 4px 16px rgba(45,109,251,0.2);
-        ">🛡️</div>
-        <div>
-          <div style="
-            color:#fff; font-family:var(--font-display); font-weight:700;
-            font-size:1.05rem; line-height:1.2; letter-spacing:-0.01em;
-          ">Privacidad de datos · Ley 1581</div>
-          <div style="color:rgba(255,255,255,0.5);font-size:0.72rem;margin-top:2px;letter-spacing:0.04em;text-transform:uppercase;">Planning Center & Colombia · Habeas Data</div>
-        </div>
-      </div>
+      <!-- Botón cerrar arriba a la derecha -->
       <button onclick="cerrarPrivacidad()" style="
+        position:absolute; top:16px; right:16px;
         background: rgba(255,255,255,0.1);
         border: 1px solid rgba(255,255,255,0.18);
-        color: rgba(255,255,255,0.75); width:34px; height:34px;
-        border-radius:50%; font-size:19px; cursor:pointer;
+        color: rgba(255,255,255,0.75); width:30px; height:30px;
+        border-radius:50%; font-size:17px; cursor:pointer;
         display:flex; align-items:center; justify-content:center;
         transition: background 0.2s, transform 0.15s; flex-shrink:0;
       " onmouseover="this.style.background='rgba(255,255,255,0.2)';this.style.transform='scale(1.08)'"
          onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.transform='scale(1)'">×</button>
+
+      <!-- Ícono + texto centrado -->
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding-right:20px;">
+        <div style="
+          width: 48px; height: 48px; border-radius: 16px; flex-shrink:0;
+          background: linear-gradient(135deg, rgba(45,109,251,0.35), rgba(45,109,251,0.12));
+          border: 1px solid rgba(45,109,251,0.4);
+          display:flex; align-items:center; justify-content:center; font-size:22px;
+          box-shadow: 0 4px 20px rgba(45,109,251,0.25);
+        ">🛡️</div>
+        <div>
+          <div style="
+            color:#fff; font-family:var(--font-display); font-weight:700;
+            font-size:1rem; line-height:1.25; letter-spacing:-0.01em;
+          ">Privacidad de datos & Ley 1581</div>
+          <div style="color:rgba(255,255,255,0.45);font-size:0.68rem;margin-top:4px;letter-spacing:0.05em;text-transform:uppercase;">Planning Center · Colombia · Habeas Data</div>
+        </div>
+      </div>
     </div>
 
     <!-- SCROLLABLE CONTENT -->
@@ -1502,36 +1539,33 @@
       </div>
 
       <!-- 3 pilares -->
-      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-bottom:22px;">
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-bottom:22px;" class="privacidad-pilares">
 
         <!-- Pilar 1 -->
-        <div style="
-          background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
-          border-radius:16px; padding:16px 14px; text-align:center;
-        ">
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:16px 14px;text-align:center;">
           <div style="font-size:24px;margin-bottom:8px;">🔐</div>
-          <div style="color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.82rem;line-height:1.3;margin-bottom:6px;">Su iglesia<br>es dueña</div>
-          <div style="color:rgba(255,255,255,0.5);font-size:0.72rem;line-height:1.4;">Planning Center solo custodia. Jamás usa sus datos para fines propios.</div>
+          <div style="flex:1;">
+            <div style="color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.82rem;line-height:1.3;margin-bottom:4px;">Su iglesia es dueña</div>
+            <div style="color:rgba(255,255,255,0.5);font-size:0.72rem;line-height:1.4;">Planning Center solo custodia. Jamás usa sus datos para fines propios.</div>
+          </div>
         </div>
 
         <!-- Pilar 2 -->
-        <div style="
-          background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
-          border-radius:16px; padding:16px 14px; text-align:center;
-        ">
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:16px 14px;text-align:center;">
           <div style="font-size:24px;margin-bottom:8px;">🏛️</div>
-          <div style="color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.82rem;line-height:1.3;margin-bottom:6px;">Cumple<br>Ley 1581</div>
-          <div style="color:rgba(255,255,255,0.5);font-size:0.72rem;line-height:1.4;">Finalidad, seguridad, confidencialidad y acceso restringido cumplidos.</div>
+          <div style="flex:1;">
+            <div style="color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.82rem;line-height:1.3;margin-bottom:4px;">Cumple Ley 1581</div>
+            <div style="color:rgba(255,255,255,0.5);font-size:0.72rem;line-height:1.4;">Finalidad, seguridad, confidencialidad y acceso restringido cumplidos.</div>
+          </div>
         </div>
 
         <!-- Pilar 3 -->
-        <div style="
-          background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
-          border-radius:16px; padding:16px 14px; text-align:center;
-        ">
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:16px 14px;text-align:center;">
           <div style="font-size:24px;margin-bottom:8px;">🛡️</div>
-          <div style="color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.82rem;line-height:1.3;margin-bottom:6px;">Seguridad<br>certificada</div>
-          <div style="color:rgba(255,255,255,0.5);font-size:0.72rem;line-height:1.4;">Cifrado, controles de acceso y auditoría SOC/AICPA independiente.</div>
+          <div style="flex:1;">
+            <div style="color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.82rem;line-height:1.3;margin-bottom:4px;">Seguridad certificada</div>
+            <div style="color:rgba(255,255,255,0.5);font-size:0.72rem;line-height:1.4;">Cifrado, controles de acceso y auditoría SOC/AICPA independiente.</div>
+          </div>
         </div>
       </div>
 
