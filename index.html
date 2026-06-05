@@ -768,6 +768,55 @@
   }
   footer a { color: #93bcff; text-decoration: none; }
   footer a:hover { text-decoration: underline; }
+  .footer-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    color: #93bcff !important;
+    text-decoration: none !important;
+  }
+  .footer-social-link:hover {
+    background: rgba(45,109,251,0.25);
+    border-color: rgba(45,109,251,0.5);
+    transform: translateY(-2px);
+    text-decoration: none !important;
+  }
+  .nav-socials {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--gray-600);
+    transition: color 0.2s, background 0.2s, border-color 0.2s;
+    text-decoration: none;
+  }
+  .nav-social-link:hover {
+    color: var(--pc-blue);
+    background: rgba(45,109,251,0.08);
+    border-color: rgba(45,109,251,0.2);
+  }
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 768px) {
@@ -962,7 +1011,11 @@
       <div class="pain-card risk">
         <div class="pain-icon risk">⚠️</div>
         <h3>Datos vulnerables y riesgo legal real</h3>
-        <p>Guardar nombres, teléfonos y correos de tus miembros en hojas de Excel desprotegidas no es solo desorden — es una violación potencial a la Ley 1581 de protección de datos de Colombia. Una sola queja puede generar sanciones. Y si el archivo se daña o se pierde, años de información desaparecen en segundos.</p>
+        <p>Guardar nombres, teléfonos y correos de tus miembros en hojas de Excel desprotegidas no es solo desorden — es una violación potencial a la Ley 1581. Una sola queja puede generar sanciones. Y si el archivo se daña o se pierde, años de información desaparecen en segundos.</p>
+        <button onclick="abrirPrivacidad()" style="margin-top:1.1rem;display:inline-flex;align-items:center;gap:6px;background:none;border:1.5px solid var(--red);color:var(--red);padding:7px 14px;border-radius:8px;font-family:inherit;font-size:0.83rem;font-weight:600;cursor:pointer;transition:background 0.2s,color 0.2s;" onmouseover="this.style.background='var(--red)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='var(--red)'">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Ver mis derechos · Ley 1581
+        </button>
       </div>
       <div class="pain-card fuga">
         <div class="pain-icon fuga">🚪</div>
@@ -1192,7 +1245,15 @@
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Organiza tu Iglesia · Implementación profesional de Software de Gestión de Iglesias</p>
-  <p style="margin-top:6px;"><a href="mailto:organizatuiglesia@gmail.com">organizatuiglesia@gmail.com</a> · Desarrollado con ❤️ para el cuerpo de Cristo</p>
+  <p style="margin-top:6px;">Desarrollado con ❤️ para el cuerpo de Cristo</p>
+  <div class="footer-socials">
+    <a href="https://www.facebook.com/people/Organiza-Tu-Iglesia/61590493946086/" target="_blank" class="footer-social-link" aria-label="Facebook">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/organiza_tu_iglesia/" target="_blank" class="footer-social-link" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+  </div>
 </footer>
 
 <script>
@@ -1324,6 +1385,231 @@
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════════════
+     MODAL: Ley 1581 — Privacidad de Datos
+════════════════════════════════════════════════ -->
+<div id="privacidad-modal" style="
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+">
+  <!-- Backdrop -->
+  <div onclick="cerrarPrivacidad()" style="
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 12, 40, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  "></div>
+
+  <!-- Glass container -->
+  <div id="privacidad-panel" style="
+    position: relative;
+    z-index: 2;
+    width: min(96vw, 700px);
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.06) 100%);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 32px;
+    box-shadow:
+      0 32px 80px rgba(5,12,40,0.55),
+      0 2px 0 rgba(255,255,255,0.3) inset,
+      0 -1px 0 rgba(255,255,255,0.06) inset,
+      0 0 0 1px rgba(45,109,251,0.08);
+    backdrop-filter: blur(50px) saturate(200%);
+    -webkit-backdrop-filter: blur(50px) saturate(200%);
+    overflow: hidden;
+    animation: modalIn 0.38s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  ">
+
+    <!-- Ambient glow top-left -->
+    <div style="
+      position: absolute; top: -60px; left: -40px;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(45,109,251,0.18) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    "></div>
+    <!-- Ambient glow bottom-right -->
+    <div style="
+      position: absolute; bottom: -50px; right: -30px;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(251,191,36,0.10) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    "></div>
+
+    <!-- HEADER -->
+    <div style="
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 24px 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      flex-shrink: 0;
+    ">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="
+          width: 42px; height: 42px; border-radius: 14px; flex-shrink:0;
+          background: linear-gradient(135deg, rgba(45,109,251,0.3), rgba(45,109,251,0.12));
+          border: 1px solid rgba(45,109,251,0.35);
+          display:flex; align-items:center; justify-content:center; font-size:20px;
+          box-shadow: 0 4px 16px rgba(45,109,251,0.2);
+        ">🛡️</div>
+        <div>
+          <div style="
+            color:#fff; font-family:var(--font-display); font-weight:700;
+            font-size:1.05rem; line-height:1.2; letter-spacing:-0.01em;
+          ">Privacidad de datos · Ley 1581</div>
+          <div style="color:rgba(255,255,255,0.5);font-size:0.72rem;margin-top:2px;letter-spacing:0.04em;text-transform:uppercase;">Planning Center & Colombia · Habeas Data</div>
+        </div>
+      </div>
+      <button onclick="cerrarPrivacidad()" style="
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.18);
+        color: rgba(255,255,255,0.75); width:34px; height:34px;
+        border-radius:50%; font-size:19px; cursor:pointer;
+        display:flex; align-items:center; justify-content:center;
+        transition: background 0.2s, transform 0.15s; flex-shrink:0;
+      " onmouseover="this.style.background='rgba(255,255,255,0.2)';this.style.transform='scale(1.08)'"
+         onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.transform='scale(1)'">×</button>
+    </div>
+
+    <!-- SCROLLABLE CONTENT -->
+    <div style="overflow-y:auto; padding:24px 24px 0; position:relative; z-index:1; flex:1;">
+
+      <!-- Eyebrow -->
+      <p style="
+        color:rgba(255,255,255,0.5); font-size:0.78rem; letter-spacing:0.06em;
+        text-transform:uppercase; margin:0 0 10px; font-weight:500;
+      ">Lo que su iglesia necesita saber</p>
+
+      <!-- Hero statement -->
+      <div style="
+        background: linear-gradient(135deg, rgba(45,109,251,0.18), rgba(45,109,251,0.06));
+        border: 1px solid rgba(45,109,251,0.25);
+        border-radius: 18px; padding: 18px 20px; margin-bottom: 22px;
+        position:relative; overflow:hidden;
+      ">
+        <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(45,109,251,0.5),transparent);"></div>
+        <p style="
+          color:#fff; font-family:var(--font-display); font-size:1rem;
+          font-weight:600; line-height:1.55; margin:0; letter-spacing:-0.01em;
+        ">Los datos de sus congregantes son de su iglesia — no de Planning Center. Y están protegidos por ley colombiana.</p>
+      </div>
+
+      <!-- 3 pilares -->
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-bottom:22px;">
+
+        <!-- Pilar 1 -->
+        <div style="
+          background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
+          border-radius:16px; padding:16px 14px; text-align:center;
+        ">
+          <div style="font-size:24px;margin-bottom:8px;">🔐</div>
+          <div style="color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.82rem;line-height:1.3;margin-bottom:6px;">Su iglesia<br>es dueña</div>
+          <div style="color:rgba(255,255,255,0.5);font-size:0.72rem;line-height:1.4;">Planning Center solo custodia. Jamás usa sus datos para fines propios.</div>
+        </div>
+
+        <!-- Pilar 2 -->
+        <div style="
+          background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
+          border-radius:16px; padding:16px 14px; text-align:center;
+        ">
+          <div style="font-size:24px;margin-bottom:8px;">🏛️</div>
+          <div style="color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.82rem;line-height:1.3;margin-bottom:6px;">Cumple<br>Ley 1581</div>
+          <div style="color:rgba(255,255,255,0.5);font-size:0.72rem;line-height:1.4;">Finalidad, seguridad, confidencialidad y acceso restringido cumplidos.</div>
+        </div>
+
+        <!-- Pilar 3 -->
+        <div style="
+          background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
+          border-radius:16px; padding:16px 14px; text-align:center;
+        ">
+          <div style="font-size:24px;margin-bottom:8px;">🛡️</div>
+          <div style="color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.82rem;line-height:1.3;margin-bottom:6px;">Seguridad<br>certificada</div>
+          <div style="color:rgba(255,255,255,0.5);font-size:0.72rem;line-height:1.4;">Cifrado, controles de acceso y auditoría SOC/AICPA independiente.</div>
+        </div>
+      </div>
+
+      <!-- Derechos Habeas Data -->
+      <div style="margin-bottom:20px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <div style="width:3px;height:18px;background:linear-gradient(180deg,#2d6dfb,#60a5fa);border-radius:2px;"></div>
+          <span style="color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.9rem;letter-spacing:-0.01em;">Derechos de sus congregantes (Habeas Data)</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="display:flex;align-items:flex-start;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:11px;padding:10px 12px;">
+            <span style="color:#4ade80;font-size:13px;margin-top:1px;flex-shrink:0;">✔</span>
+            <span style="color:rgba(255,255,255,0.75);font-size:0.76rem;line-height:1.45;"><strong style="color:#fff;">Acceso</strong> — consultar qué datos tiene la iglesia</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:11px;padding:10px 12px;">
+            <span style="color:#4ade80;font-size:13px;margin-top:1px;flex-shrink:0;">✔</span>
+            <span style="color:rgba(255,255,255,0.75);font-size:0.76rem;line-height:1.45;"><strong style="color:#fff;">Corrección</strong> — actualizar información inexacta</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:11px;padding:10px 12px;">
+            <span style="color:#4ade80;font-size:13px;margin-top:1px;flex-shrink:0;">✔</span>
+            <span style="color:rgba(255,255,255,0.75);font-size:0.76rem;line-height:1.45;"><strong style="color:#fff;">Eliminación</strong> — borrar datos a solicitud del miembro</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:11px;padding:10px 12px;">
+            <span style="color:#4ade80;font-size:13px;margin-top:1px;flex-shrink:0;">✔</span>
+            <span style="color:rgba(255,255,255,0.75);font-size:0.76rem;line-height:1.45;"><strong style="color:#fff;">Retirar consentimiento</strong> — en cualquier momento</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alerta iglesia -->
+      <div style="
+        background: linear-gradient(135deg, rgba(251,191,36,0.12), rgba(251,191,36,0.04));
+        border: 1px solid rgba(251,191,36,0.25); border-radius:16px; padding:16px 18px;
+        margin-bottom:24px; display:flex; gap:12px; align-items:flex-start;
+        position:relative; overflow:hidden;
+      ">
+        <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(251,191,36,0.45),transparent);"></div>
+        <span style="font-size:20px;flex-shrink:0;margin-top:1px;">⚠️</span>
+        <div>
+          <div style="color:#fbbf24;font-family:var(--font-display);font-weight:700;font-size:0.84rem;margin-bottom:5px;">Su iglesia también tiene responsabilidades</div>
+          <ul style="margin:0;padding-left:16px;color:rgba(255,255,255,0.65);font-size:0.75rem;line-height:1.6;">
+            <li>Tener un <strong style="color:rgba(255,255,255,0.85);">Aviso de Privacidad</strong> propio (Art. 15)</li>
+            <li>Obtener <strong style="color:rgba(255,255,255,0.85);">autorización expresa</strong> de cada titular</li>
+            <li>Atender solicitudes en máx. <strong style="color:rgba(255,255,255,0.85);">10 días hábiles</strong></li>
+            <li><strong style="color:rgba(255,255,255,0.85);">Consentimiento de padres</strong> para datos de menores (Art. 7)</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- end scroll -->
+
+    <!-- FOOTER del modal -->
+    <div style="
+      position:relative; z-index:1; flex-shrink:0;
+      padding:16px 24px 20px;
+      border-top:1px solid rgba(255,255,255,0.1);
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      flex-wrap:wrap;
+    ">
+      <span style="color:rgba(255,255,255,0.4);font-size:0.72rem;">Documento preparado por Organiza tu Iglesia</span>
+      <a href="Privacidad_de_datos.pdf" download="Privacidad_de_datos_Ley1581.pdf" style="
+        display:inline-flex; align-items:center; gap:7px;
+        background: linear-gradient(135deg, #2d6dfb, #1a52d0);
+        border: 1px solid rgba(255,255,255,0.15);
+        color:#fff; text-decoration:none;
+        padding:9px 18px; border-radius:50px; font-size:0.8rem; font-weight:600;
+        font-family:var(--font-display);
+        box-shadow: 0 4px 20px rgba(45,109,251,0.4);
+        transition: transform 0.15s, box-shadow 0.15s;
+        letter-spacing:0.01em;
+      " onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 6px 28px rgba(45,109,251,0.55)'"
+         onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(45,109,251,0.4)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Descargar guía completa (PDF)
+      </a>
+    </div>
+  </div>
+</div>
+
 <style>
   @keyframes modalIn {
     from { opacity: 0; transform: scale(0.92) translateY(24px); }
@@ -1372,9 +1658,34 @@
     }, 220);
   }
 
+  function abrirPrivacidad() {
+    const modal = document.getElementById('privacidad-modal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    // Reset animation
+    const panel = document.getElementById('privacidad-panel');
+    panel.style.animation = 'none';
+    panel.offsetHeight; // reflow
+    panel.style.animation = '';
+  }
+
+  function cerrarPrivacidad() {
+    const modal = document.getElementById('privacidad-modal');
+    const panel = document.getElementById('privacidad-panel');
+    panel.style.animation = 'modalOut 0.22s ease forwards';
+    setTimeout(() => {
+      modal.style.display = 'none';
+      panel.style.animation = '';
+      document.body.style.overflow = '';
+    }, 220);
+  }
+
   // Cerrar con tecla Escape
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') cerrarCalendly();
+    if (e.key === 'Escape') {
+      cerrarCalendly();
+      cerrarPrivacidad();
+    }
   });
 </script>
 
